@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming ChatAPP</title>
+    <link rel="stylesheet" href="../public/dist/css/style.min.css">
+    <link rel="stylesheet" href="../public/dist/css/pages/gaming.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js"
+        integrity="sha512-lTLt+W7MrmDfKam+r3D2LURu0F47a3QaW5nF0c6Hl0JDZ57ruei+ovbg7BrZ+0bjVJ5YgzsAWE+RreERbpPE1g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        #messages {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('./layouts/loaders') %>
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col-11 mx-auto col-md-4 kullaniciKarti thing">
+                <div class="container-fluid bg-primarykoyu box">
+                    <div class="row">
+                        <div class="col-2 my-auto">
+                            <button class="btn text-white">
+                                <i class="fa fa-arrow-left fa-2x"></i>
+                            </button>
+                        </div>
+                        <div class="col-8">
+                            <h1 class="text-center text-white">
+                                USERS
+                            </h1>
+                        </div>
+
+                        <!-- <h1 class="text-center text-white"> USERS </h1> -->
+
+                    </div>
+                </div>
+
+
+                <!-- buraya uselar gelir -->
+                <!-- <div class="row bg-grey mt-2" id='user-card'>
+                            
+                        <div class="fotoKart col-4 bg-grey">
+                            <img class="foto" src="../public/images/music.jpeg"></img>
+                        </div>
+                        <div class="col-8 my-auto bg-grey">
+                            <p class="isimler">Ahmet Mehmet</p>
+                        </div>
+                </div> -->
+            </div>
+            <!-- <span> -->
+            <div class="col-11 col-md-7 mx-auto chatKartibig thing">
+                <div class="chatKarti" id="chatKarti">
+                    <div class=" bg-primarykoyu chatBaslik box">
+                        <h1 class="text-center text-white">
+                            GAMING CHAT
+                        </h1>
+                    </div>
+                    <!-- <div class="konteyner">
+                            <img src="../public/images/gaming.jpeg" alt="Avatar">
+                            <span class="time-right">11:00</span>
+                            <span style="color:blueviolet">adas</span>
+                            asdasdasdas d a
+                            dsfsdad adas d sdasd asdnas danasdja ndajd asnn asjdandansdjasj 
+                          </div>
+                          
+                          <div class="konteyner darker">
+                            <span class="time-left">11:00</span>
+                            <img src="../public/images/gaming.jpeg" alt="Avatar" class="right" style="width:100%;">
+                            <span style="color:blueviolet">adas</span>
+                            <span>asdasdasdas d a
+                                dsfsdad adas d sdasd asdnas danasdja ndajd asnn asjdandansdjasj </span>
+                          </div>
+                           -->
+                </div>
+                <ul id="messages"></ul>
+
+
+                <div class="input-group chat-input">
+                    <input type="text" class="form-control" id="message-text" placeholder="Send message!"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append d-flex" >
+                        <button class="btn btn-outline-secondary" id='send-message-btn' type="button">Send!</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <%- include('./layouts/loaderf') %>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../public/dist/gaming.js"></script>
+    <!-- <script>
+                $(document).ready(function() {
+                    var socket = io();
+                    $(function() {
+                        $('form').submit((e) => {
+                            e.preventDefault();
+                            var data = $('#message-text').val();
+                            socket.emit('chat message', data);
+                            console.log(data);
+                            $('#message-text').val('')
+                            return false;
+                            // x = document.getElementById("message-text").value
+                            // console.log(x);
+                        })
+                    })
+                    socket.on('chat message', (msg) => {
+                        $('#messages').append($('<li>').text(msg));
+                    });
+                });
+            </script> -->
+
+</body>
+
+</html>

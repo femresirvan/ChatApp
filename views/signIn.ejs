@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In-ChatAPP</title>
+    <link rel="stylesheet" href="../public/dist/css/style.min.css">
+    <link rel="stylesheet" href="../public/dist/css/pages/sign_up.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js" integrity="sha512-lTLt+W7MrmDfKam+r3D2LURu0F47a3QaW5nF0c6Hl0JDZ57ruei+ovbg7BrZ+0bjVJ5YgzsAWE+RreERbpPE1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <%- include('./layouts/loaders') %>
+    <div class="container vh-100">
+        <div class="row vh-100">
+            <div class="col-10 col-md-4 align-self-center mx-auto kart thing">
+                <form class="m-3" action="">
+                    <div class="row">
+
+
+
+                        <div class="col-12">
+                            <label for="Email">Email:</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="femre@gmail.com" id="email"
+                                    aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <label for="Password">Password:</label>
+                            <div class="input-group mb-3">
+
+                                <input type="password" class="form-control" placeholder="Password" id="pass"
+                                    aria-label="Username" aria-describedby="basic-addon1">
+
+                            </div>
+                        </div>
+                        <div class="col-6"><button type="button" id="sign-in-btn"
+                                class="btn btn-primary w-100 align-self-end">Sign in!</button></div>
+                                <div class="col-6"><button type="button" onclick="window.location.href='/signup'"
+                                    class="btn btn-primary w-100 align-self-end">Sign Up!</button></div>
+                        <div class="col-5 mx-auto pt-2">
+                            <button type="button" id="google-sign-in-btn" onclick="window.location.href='/auth/google'" class="btn btn-light w-100"><i class="fa fa-google fa-3x">
+                                </i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <%- include('./layouts/loaderf') %>
+    <script src="../public/js/sign_in.js"></script>
+</body>
+
+</html>

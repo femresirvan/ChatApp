@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In-ChatAPP</title>
+    <link rel="stylesheet" href="../public/dist/css/style.min.css">
+    <link rel="stylesheet" href="../public/dist/css/pages/sign_up.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js" integrity="sha512-lTLt+W7MrmDfKam+r3D2LURu0F47a3QaW5nF0c6Hl0JDZ57ruei+ovbg7BrZ+0bjVJ5YgzsAWE+RreERbpPE1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <%- include('./layouts/loaders') %> 
+    <div class="container vh-100">
+        <div class="row vh-100">
+            <div class="col-11 col-sm-5 align-self-center mx-auto kart thing">
+                <form class="m-3" action="">
+                    <div class="row">
+
+                        <div class="col-8">
+                            <label for="Name">Name:*</label>
+                            <div class="input-group mb-3">
+                                <input type="text" required class="form-control" placeholder="Fırat Emre" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <label for="Surname:">Surname:*</label>
+                            <div class="input-group mb-3">
+
+                                <input type="text" class="form-control" required placeholder="Şirvan" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row h-100">
+                          
+                                
+                                <img class="foto mb-2" id="output"/>
+                                <script>
+                                  var loadFile = function(event) {
+                                    var reader = new FileReader();
+                                    reader.onload = function(){
+                                      var output = document.getElementById('output');
+                                      output.src = reader.result;
+                                    };
+                                    reader.readAsDataURL(event.target.files[0]);
+                                    
+                                  };
+                                </script>
+                                <input type="file" id="selectedFile" style="display: none;" onchange="loadFile(event)"/>
+                                <input type="button" value="Image" class="selectButton" onclick="document.getElementById('selectedFile').click();" />
+                                <!-- <input type="file"  accept="image/*" onchange="loadFile(event)"> -->
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="Email">Email:*</label>
+                            <div class="input-group mb-3">
+                                <input type="text" id="email" required class="form-control" placeholder="femre@gmail.com" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <label for="Password">Password:*</label>
+                            <div class="input-group mb-3">
+
+                                <input type="password" id="pass" required class="form-control" placeholder="Password" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+
+                            </div>
+                        </div>
+                        <div class="col-12"><button type="button" id="sign-up-btn" class="btn btn-primary w-100 align-self-end">Sign up!</button></div>
+                        <div class="col-12 mt-4"><p class="text-right"><a href="/signin">Do you already have an account?</a></p></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script src="../public/dist/sign_up.js"></script>
+    <%- include('./layouts/loaderf') %>  
+</body>
+
+</html>

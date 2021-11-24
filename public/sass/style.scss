@@ -1,0 +1,17 @@
+//STİLLERİN BELİRLENDİĞİ ANA SASS DOSYASI
+
+$theme-colors: (
+  "primary": #461043,
+  "primarykoyu":#401043,
+  "secondary": #ffd900,
+  "grey": #d8d8d8
+);
+
+$enable-rounded: false;
+
+@import "./loader.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+*{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}

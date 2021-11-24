@@ -1,0 +1,40 @@
+.kart{
+    object-fit: cover; height:100vh; max-width: 100%;
+}
+.resim{
+
+  filter: grayscale(100%);
+
+}
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+  }
+  .anakart:hover .middle {
+    opacity: 0.8;
+  }
+.anakart:hover .kart {
+    filter: grayscale(0%);
+    transition: .2s ease;
+  }
+
+
+@media (max-width: 576px) {
+ 
+  .kart{width: 100vh; height: 35vh;}
+    
+}
+
+@media (min-width: 576px) {
+ 
+ 
+}
+
+#channelBaslik{
+  font-family: 'Style Script', cursive;
+}
