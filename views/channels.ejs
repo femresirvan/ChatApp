@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js"
+    integrity="sha512-lTLt+W7MrmDfKam+r3D2LURu0F47a3QaW5nF0c6Hl0JDZ57ruei+ovbg7BrZ+0bjVJ5YgzsAWE+RreERbpPE1g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -23,28 +26,27 @@
         
         <div class="row no-gutters d-flex justify-content-center">
             <h1 class="text-center text-white position-absolute mt-5" style="z-index: 1;" id="channelBaslik">CHOOSE YOUR CHANNEL</h1>    
-            <div class="col-sm-12 col-md-4 anakart">
-                <img src="../public/images/music.jpeg" class="kart resim">
+            <div class="col-sm-12 col-md-4 anakart" style="background-image:url('../public/images/music.jpeg'); background-size: cover;">
                 <div class="middle">
                     <a href="/music" class="btn btn-primary" id="musicBtn"><i class='fa fa-music' style="font-size: xx-large;"></i></a>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-4 anakart">
-                <img src="../public/images/gaming.jpeg" class="kart resim">
+            <div class="col-sm-12 col-md-4 anakart" style="background-image:url('../public/images/gaming.jpeg'); background-repeat: no-repeat; background-size: cover;">
                 <div class="middle">
                     <a href="/gaming" class="btn btn-primary" id="musicBtn"><i class='fa fa-gamepad' style="font-size: xx-large;"></i></a>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-4 anakart">
-                <img src="../public/images/movie2.jpeg" class="kart resim">
+            <div class="col-sm-12 col-md-4 anakart" style="background-image:url('../public/images/movie2.jpeg'); background-size: cover;">
                 <div class="middle">
                     <a href="/movie" class="btn btn-primary"><i class='fa fa-film' style="font-size: xx-large;"></i></a>
                 </div>
+                
             </div>
+            <button onclick="logout()" class="btn btn-primary" id="logout-btn" >Log out</button>
         </div>
     </div>
     <!-- MAIN CONTENT -->
-
+    <script src="../public/dist/channels.js"></script>
     <%- include('./layouts/loaderf') %>  
     <script>
         

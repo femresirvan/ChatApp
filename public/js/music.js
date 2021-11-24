@@ -255,3 +255,7 @@ socket.on('gaming-user-disconnect',(msg) => {
    console.log(msg);
    deleteUser(msg);
 })
+
+const backChannelsScreen = () => {
+   window.location.href = "/channels";
+}

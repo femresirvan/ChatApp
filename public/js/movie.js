@@ -59,7 +59,7 @@ sendMessageBtn.addEventListener("click", function () {
 })
 
 const sendMessage = () => {
-   if (messageText.value) {
+   if(messageText.value){
       var messageBox = document.createElement('div')
       var message = document.createElement('span');
       var username = document.createElement('span');
@@ -68,17 +68,17 @@ const sendMessage = () => {
       chatCard.appendChild(messageBox);
       messageBox.classList.add('konteyner');
       username.style.color = '#620075';
-
+      
       username.style.fontWeight = 'bold';
       messageBox.appendChild(time);
       messageBox.classList.add('darker');
-
+      
       messageBox.appendChild(image);
       messageBox.appendChild(username);
       messageBox.appendChild(message);
-
+   
       image.classList.add('right');
-      image.style.border = '3px solid ' + user.profile.color;
+      image.style.border = '3px solid '+ user.profile.color;
       time.classList.add('time-left')
       message.innerHTML = messageText.value;
       username.style.marginRight = '5px';
@@ -90,13 +90,13 @@ const sendMessage = () => {
          else if (date.getHours().toString().length == 2 && date.getMinutes().toString().length == 1) timeStr = date.getHours() + ':' + '0' + date.getMinutes();
          else if (date.getHours().toString().length == 1 && date.getMinutes().toString().length == 1) timeStr = '0' + date.getHours() + ':' + '0' + date.getMinutes();
       } else timeStr = date.getHours() + ':' + date.getMinutes();
-
+   
       time.innerHTML = timeStr;
       image.src = user.profile.picture;
       if (messageText.value) socket.emit('gaming', messageText.value);
       messageText.value = "";
-
-
+   
+   
       $('#' + 'chatKarti').animate({
          scrollTop: div.scrollHeight - div.clientHeight
       }, {
@@ -178,57 +178,57 @@ const createUsers = (msg) => {
 
 const createUser = (msg) => {
    let a = 0;
-   const allUsernames = document.getElementsByClassName('username');
-   for (var i = 0; i < allUsernames.length; i++) {
-      if (allUsernames[i].innerHTML == msg.name) a = 1;;
+      const allUsernames = document.getElementsByClassName('username');
+      for(var i = 0;i<allUsernames.length;i++){
+         if(allUsernames[i].innerHTML == msg.name) a = 1;;
+      }
+      if(a == 0){
+         var userPhotoCard = document.createElement('div');
+         var usernameCard = document.createElement('div');
+         var userCard = document.createElement('div');
+         var kullaniciKarti = document.querySelector('.kullaniciKarti')
+         userPhotoCard.classList.add("fotoKart");
+         userPhotoCard.classList.add("col-4");
+         userPhotoCard.classList.add("py-2");
+         usernameCard.classList.add("pt-2");
+         
+         userCard.classList.add("mt-2");
+         userCard.classList.add("row");
+         userCard.classList.add("box");
+         userCard.classList.add("mx-2");
+         userCard.classList.add("bg-grey");
+         var photo = document.createElement('img');
+         photo.classList.add("foto");
+         userPhotoCard.appendChild(photo);
+         photo.src = msg.picture; //BURASI WEBSOCKETE BAĞLANACAK
+   
+   
+         usernameCard.classList.add('col-8');
+         usernameCard.classList.add('my-auto');
+         var username = document.createElement('p');
+         username.classList.add('isimler');
+         usernameCard.appendChild(username);
+         username.innerHTML = msg.name; //BURASI WEBSOCKETE BAĞLANACAK
+         userCard.appendChild(userPhotoCard);
+         userCard.appendChild(usernameCard);
+         kullaniciKarti.appendChild(userCard);
+      }
+     
    }
-   if (a == 0) {
-      var userPhotoCard = document.createElement('div');
-      var usernameCard = document.createElement('div');
-      var userCard = document.createElement('div');
-      var kullaniciKarti = document.querySelector('.kullaniciKarti')
-      userPhotoCard.classList.add("fotoKart");
-      userPhotoCard.classList.add("col-4");
-      userPhotoCard.classList.add("py-2");
-      usernameCard.classList.add("pt-2");
-
-      userCard.classList.add("mt-2");
-      userCard.classList.add("row");
-      userCard.classList.add("box");
-      userCard.classList.add("mx-2");
-      userCard.classList.add("bg-grey");
-      var photo = document.createElement('img');
-      photo.classList.add("foto");
-      userPhotoCard.appendChild(photo);
-      photo.src = msg.picture; //BURASI WEBSOCKETE BAĞLANACAK
-
-
-      usernameCard.classList.add('col-8');
-      usernameCard.classList.add('my-auto');
-      var username = document.createElement('p');
-      username.classList.add('isimler');
-      usernameCard.appendChild(username);
-      username.innerHTML = msg.name; //BURASI WEBSOCKETE BAĞLANACAK
-      userCard.appendChild(userPhotoCard);
-      userCard.appendChild(usernameCard);
-      kullaniciKarti.appendChild(userCard);
-   }
-
-}
 
 
 const deleteUser = (msg) => {
    const allUsernames = document.getElementsByClassName('isimler');
    console.log(allUsernames);
    var kullaniciKarti = document.querySelector('.kullaniciKarti')
-   for (var i = 0; i < allUsernames.length; i++) {
-      if (allUsernames[i].innerHTML == msg.name) {
+   for(var i = 0;i<allUsernames.length;i++){
+      if(allUsernames[i].innerHTML == msg.name){
          const usernameCard = allUsernames[i].parentElement;
          const userCard = usernameCard.parentElement;
          kullaniciKarti.removeChild(userCard);
       }
 
-
+     
    }
 }
 
@@ -237,25 +237,25 @@ socket.on('gaming', (msg) => {
    takeMessage(msg)
 });
 
-socket.on('gaming-users-connect', (msg) => {
+socket.on('gaming-users-connect',(msg) => {
    console.log('success enter');
    console.log(msg)
    createUsers(msg);
 
 })
-socket.on('gaming-user-connect', (msg) => {
+socket.on('gaming-user-connect',(msg) => {
    console.log('user connected')
    console.log(msg);
    createUser(msg);
 
 })
 
-socket.on('gaming-user-disconnect', (msg) => {
+socket.on('gaming-user-disconnect',(msg) => {
    console.log('user disconnected')
    console.log(msg);
    deleteUser(msg);
 })
 
 const backChannelsScreen = () => {
-   window.location.href = "/channels";
-}
+    window.location.href = "/channels";
+ }
