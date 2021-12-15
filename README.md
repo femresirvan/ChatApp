@@ -1,5 +1,3 @@
-!This readme file still under development.
-
 # ChatApp
 
 ![](https://img.shields.io/github/license/femresirvan/ChatAPP)
@@ -16,11 +14,11 @@
 
 ## Introduction
 
-asdasdd
+A simple chat app with user system.
 
 ### 👀 Review
 
-adsadasda
+![](./assets/simplescreenrecorder-2021-12-15_14.45.41.gif)
 
 ## Prerequisite
 
@@ -45,13 +43,18 @@ Configure .env
 <!-- EDIT HERE  -->
 ```bash
 ➥ ~./env
-$ basher install ekalinin/github-markdown-toc
-# `gh-md-toc` will automatically be available in the PATH
+
+MONGODB_URI="YOUR_MONGODB_CONN_STRING"
+GOOGLE_ID=""
+GOOGLE_SECRET=""
 ```
 
 ## Features
 
-adasdasdad
+- User system.
+- Chat system with websocket.
+- Google Auth and cookie based authentication in the same app.
+- Responsive design with that you can easily use on any device.
 
 ### Some extra ideas
 
@@ -63,15 +66,15 @@ adasdasdad
 
 ### Technologies
 
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
-
+- Socket io
+- Gulp
+- Node.js
+- Bootstrap&Sass
+- MongoDB
+- Express.js
+- Passport.js
+- Google Oauth
+- Rest API 
 ### License
 
 <!-- EDIT HERE -->
@@ -79,4 +82,4 @@ MIT
 
 ### Contributes
 
-🤝 Big thanks to [Sahat/Hackathon-Starter](https://github.com/sahat/hackathon-starter) that allows you easily start node.js applications.
+> 🤝 Big thanks to [Sahat/Hackathon-Starter](https://github.com/sahat/hackathon-starter) that allows you easily start node.js applications.

@@ -22,7 +22,7 @@ const signIn = () => {
         if(err.response.data.msg instanceof Array){
           alert(err.response.data.msg[0]);
         }
-        // alert(err.response.data.msg);
+        else {alert(err.response.data.msg);}
       });
 }
 
