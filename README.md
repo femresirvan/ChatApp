@@ -14,7 +14,7 @@
 
 ## Introduction
 
-A simple chat app with user system.
+A brief responsive designed chat application with user system. You can communicate room by room with your interests. This project contains Session based email and Google authentication with Passport, Websocket communication, MongoDB user database, Web API with HTTP protocol and many more!
 
 ### 👀 Review
 
